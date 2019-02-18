@@ -1,1 +1,1 @@
-import './first.test.js';
+import './update-gameboard-test.js';
