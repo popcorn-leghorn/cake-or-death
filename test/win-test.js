@@ -1,23 +1,5 @@
 const test = QUnit.test;
-
-function win(gameboard, player) {
-    if(
-        (gameboard[0] === player && gameboard[1] === player && gameboard[2] === player) ||
-        (gameboard[3] === player && gameboard[4] === player && gameboard[5] === player) ||
-        (gameboard[6] === player && gameboard[7] === player && gameboard[8] === player) ||
-        (gameboard[0] === player && gameboard[3] === player && gameboard[6] === player) ||
-        (gameboard[1] === player && gameboard[4] === player && gameboard[7] === player) ||
-        (gameboard[2] === player && gameboard[5] === player && gameboard[8] === player) ||
-        (gameboard[2] === player && gameboard[4] === player && gameboard[6] === player) ||
-        (gameboard[0] === player && gameboard[4] === player && gameboard[8] === player)) {
-        
-        return true;
-    }
-    else {
-        return false;
-    }
-
-}
+import win from '../src/game/calculations/win.js';
 
 test('if cake owns spots 0, 1, & 2, win function returns true', function(assert) {
     const gameboard = ['C', 'C', 'C', 3, 4, 5, 6, 7, 8];
