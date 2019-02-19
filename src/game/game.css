@@ -1,13 +1,40 @@
-table {
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-info {
+    border: 3px solid black;
+    width: 700px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+#cake-player, #death-player {
+    border: 2px solid black;  
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px; 
+}
+
+#cake-icon, #death-icon {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+}
+
+#game-table {
     border: 3px solid black;
     width: 700px;
     height: 700px;
     display: flex;
-    
     justify-content: center;
     align-items: center;
 }
-td {
+
+.game-cell {
     text-align: center;
     border: 5px solid black;
     border-radius: 5px;

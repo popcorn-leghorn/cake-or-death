@@ -6,10 +6,16 @@ import win from './calculations/win.js';
 const gameBodyNode = document.getElementById('game-body');
 const json = window.localStorage.getItem('userInfo');
 const userInfo = JSON.parse(json);
+const cakeNameNode = document.getElementById('cake-name');
+const deathNameNode = document.getElementById('death-name');
+const turnDisplayNode = document.getElementById('turn-display');
+cakeNameNode.textContent = userInfo.playerCake;
+deathNameNode.textContent = userInfo.playerDeath;
 
 let gameboard = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 let turnCount = 0;
 let player = 'C';
+turnDisplayNode.textContent = 'It\'s ' + userInfo.playerCake + '\'s turn!';
 
 for(let i = 0; i < 3; i++) {
     const tr = document.createElement('tr');
@@ -17,6 +23,7 @@ for(let i = 0; i < 3; i++) {
     for(let j = 0; j < 3; j++) {
         const td = document.createElement('td');
         td.id = 'cell-' + buildGameboard[i][j].value;
+        td.classList.add('game-cell');
         // can use above method to add additional attributes to buttons.
         const button = document.createElement('button');
         button.value = buildGameboard[i][j].value;
@@ -34,6 +41,14 @@ for(let i = 0; i < 3; i++) {
                 player = 'D';
                 selectedCell.classList.add('death-cell');
             }
+
+            if(player === 'D') {
+                turnDisplayNode.textContent = 'It\'s ' + userInfo.playerCake + '\'s turn!';
+            }
+            else if(player === 'C') {
+                turnDisplayNode.textContent = 'It\'s ' + userInfo.playerDeath + '\'s turn!';
+            }
+            
             updateGameboard(gameboard, button.value, player);
             
 
@@ -47,7 +62,7 @@ for(let i = 0; i < 3; i++) {
                 }
                 window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
             }
-            else if(win(gameboard, player) === false && turnCount === 9) {
+            else if(win(gameboard, player) === false && turnCount === 8) {
                 userInfo.result = 'tie';
                 window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
             }
