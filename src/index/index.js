@@ -6,9 +6,8 @@ formNode.addEventListener('submit', function(event){
 
     const userInfo = {
         playerCake: formData.get('player-cake'),
-        playerDeath: formData.get('player-death') 
-        winner: '',
-        loser: ''   
+        playerDeath: formData.get('player-death'), 
+        result: ''   
     };
 
     const json = JSON.stringify(userInfo);

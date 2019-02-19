@@ -28,16 +28,20 @@ for(let i = 0; i < 3; i++) {
             win(gameboard, player);
             if(win(gameboard, player) === true) {
                 if(player === 'C') {
-                    userInfo.winner = userInfo.playerCake;
-                    userInfo.loser = userInfo.playerDeath;
+                    userInfo.result = 'cake';
                 }
                 if(player === 'D') {
-                    userInfo.winner = userInfo.playerDeath;
-                    userInfo.loser = userInfo.playerCake;
+                    userInfo.result = 'death';
                 }
-                console.log(userInfo);
+                window.location = 'result.html/'
             }
-            turnCount++;
+            else if(win(gameboard, player) === false && turnCount === 9) {
+                userInfo.result = 'tie';
+            }
+            else {
+                turnCount++;
+            }
+            console.log(userInfo);
         });
         td.id = 'cell-' + buildGameboard[i][j].value;
         // can use above method to add additional attributes to buttons.
