@@ -1,12 +1,39 @@
 table {
-    border: 1px solid black;
+    border: 3px solid black;
     width: 700px;
     height: 700px;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
 }
 td {
-    border: 1px solid black;
+    text-align: center;
+    border: 5px solid black;
+    border-radius: 5px;
+    padding: 0px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
 }
 button {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-self: center;
+}
+
+.gameboard-buttons {
+    background-image: url('../../assets/newthumb_3__2.png');
+    background-size: cover;
+}
+
+.cake-cell {
+    background-image: url('../../assets/cake-1.png');
+    background-size: cover;
+}
+
+.death-cell {
+    background-image: url('../../assets/death-1.png');
+    background-size: cover;
 }
