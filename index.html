@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cake or DEATH?!</title>
     <link rel="stylesheet" type="text/css" href="src/index/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Coiny|Gloria+Hallelujah|Indie+Flower|Luckiest+Guy" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -24,16 +25,22 @@
             <h2>See if you deserve CAKE.... or DEATH!!!</h2>
         </p>
         <form id="user-input">
-            <label for="player-cake">Player 1</label>
-            <input 
-                type="text"
-                name="player-cake"
-                id="player-cake">
-            <label for="player-death">Player 2</label>
-            <input 
-                type="text"
-                name="player-death"
-                id="player-death">
+            <section id="cake-input">
+                <img id="cake-icon" src="./assets/cake-icon-2.png">
+                <input 
+                    type="text"
+                    name="player-cake"
+                    id="player-cake"
+                >
+            </section>
+            <section id="death-input">
+                <img id="death-icon" src="./assets/death-icon.png">
+                <input 
+                    type="text"
+                    name="player-death"
+                    id="player-death"
+                >
+            </section>
             <button>Play!</button>
         </form>
     </main>

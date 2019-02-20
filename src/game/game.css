@@ -6,6 +6,12 @@ body {
     flex-direction: column;
     align-items: center;
 }
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: hotpink;
+    font-size: 48px;
+    text-shadow: 2px 12px 2px black;
+}
 
 #user-info {
     border: 3px solid black;
@@ -18,9 +24,10 @@ body {
     border-radius: 5px;
 }
 #cake-player, #death-player {
-    border: 2px solid black;  
     display: flex; 
     justify-content: space-evenly;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 36px;
     align-items: center;
     width: 300px; 
     border-radius: 5px;
@@ -28,10 +35,15 @@ body {
 #turn-count {
     background-color: #6F2232;
     border: 3px solid black;
+    text-shadow: 2px 2px 2px hotpink;
     margin: 5px;
     border-radius: 5px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 36px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 75px;
 }
 
 #cake-icon, #death-icon {
@@ -40,7 +52,10 @@ body {
     width: 50px;
     border-radius: 5px;
 }
-
+table {
+    border-collapse: separate;
+    border-spacing: 6px;
+}
 #game-table {
     border: 3px solid black;
     width: 700px;
@@ -56,7 +71,7 @@ body {
 
 .game-cell {
     text-align: center;
-    border: 5px solid black;
+    border: 4px solid black;
     border-radius: 5px;
     padding: 0px;
     width: 200px;
@@ -71,7 +86,7 @@ button {
 }
 
 .gameboard-buttons {
-    background-image: url('../../assets/newthumb_3__2.png');
+    background-image: url('../../assets/cake-or-death.png');
     background-size: cover;
 }
 

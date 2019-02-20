@@ -27,6 +27,7 @@ main {
     background-color: #1A1A1D;
     border: 3px solid black;
     padding: 10px;
+    border-radius: 5px;
 }
 p {
     width: 75%;
@@ -37,5 +38,23 @@ p {
 
 form {
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+#cake-icon, #death-icon {
+    width: 50px;
+    height:50px;
+    background-color: #6F2232;
+    border-radius: 5px;
+}
+
+#cake-input, #death-input {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-around;
+    height: 100px;
+    border-radius: 5px;
 }

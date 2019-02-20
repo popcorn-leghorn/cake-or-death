@@ -37,3 +37,9 @@ Repackage the userInfo object and send it via JSON
 Option 2: 
 Encode the URI component for userInfo.result
 window.location = 'result.html?=banana' + encodeURI(userInfo.result);
+
+font-family: 'Coiny', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Luckiest Guy', cursive;
