@@ -43,3 +43,5 @@ font-family: 'Indie Flower', cursive;
 font-family: 'Anton', sans-serif;
 font-family: 'Gloria Hallelujah', cursive;
 font-family: 'Luckiest Guy', cursive;
+font-family: 'Patrick Hand', cursive;
+font-family: 'Patrick Hand SC', cursive;

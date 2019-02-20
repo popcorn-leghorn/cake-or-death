@@ -6,19 +6,34 @@ header {
     text-shadow: 1px 1px 2px black;
     width: 50%;
     justify-content: center;
-    color: #950750;
+    
 }
+
+
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: hotpink;
+    font-size: 48px;
+    text-shadow: 2px 12px 2px black;
+}
+
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: oldlace;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 20px;
 }
 h2 {
     color: #950750;
     text-shadow: 1px 1px 2px black;
+    font-family: 'Gloria Hallelujah', cursive;
+    height: 50px;
+    margin: 15px;
 }
 main {
     display: flex;
@@ -31,13 +46,18 @@ main {
 }
 p {
     width: 75%;
-    /* border: 3px solid black; */
     display: flex;
+    /* text-align: center; */
+}
+input {
     text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    color: hotpink;
+    background-color: #6F2232;
+    border: 3px solid black;
 }
 
 form {
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
 }
