@@ -117,3 +117,30 @@ button {
     align-items: center;
     margin-bottom: 10px;
 }
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+
+}
+
+#profile-main {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+#cara, #cosmo, #emily, #peter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-name {
+    font-size: 24px;
+    margin-top: -20px;
+    margin-right: 20px;
+    width: 100px;
+    top: -25px;
+}
