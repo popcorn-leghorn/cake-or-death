@@ -4,18 +4,17 @@ html {
 header {
     display: flex;
     text-shadow: 1px 1px 2px black;
-    width: 50%;
+    width: 100%;
     justify-content: center;
-    
+    margin: 10px;   
 }
-
-
 
 h1 {
     font-family: 'Luckiest Guy', cursive;
     color: hotpink;
-    font-size: 48px;
+    font-size: 80px;
     text-shadow: 2px 12px 2px black;
+    margin: 0px;   
 }
 
 
@@ -29,7 +28,7 @@ body {
     font-size: 20px;
 }
 h2 {
-    color: #950750;
+    color: hotpink;
     text-shadow: 1px 1px 2px black;
     font-family: 'Gloria Hallelujah', cursive;
     height: 50px;
@@ -44,6 +43,22 @@ main {
     padding: 10px;
     border-radius: 5px;
 }
+
+footer {
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #1A1A1D;
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    color: oldlace;
+}
+
 p {
     width: 75%;
     display: flex;
@@ -51,21 +66,33 @@ p {
 }
 input {
     text-align: center;
-    font-family: 'Luckiest Guy', cursive;
-    color: hotpink;
-    background-color: #6F2232;
+    background-color: oldlace;
     border: 3px solid black;
 }
 
 form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player-inputs {
+    display: flex;
     flex-direction: row;
 }
 
+button {
+    background-color: black;
+    color: oldlace;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+}
+
 #cake-icon, #death-icon {
-    width: 50px;
-    height:50px;
-    background-color: #6F2232;
+    width: 60px;
+    height:60px;
+    background-color: hotpink;
     border-radius: 5px;
 }
 
@@ -77,4 +104,16 @@ form {
     justify-content: space-around;
     height: 100px;
     border-radius: 5px;
+}
+
+#cake-wins, #death-wins, #tie {
+    width: 300px;
+}
+
+#message-box, #end-message {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
 }

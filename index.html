@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cake or DEATH?!</title>
     <link rel="stylesheet" type="text/css" href="src/index/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Coiny|Gloria+Hallelujah|Indie+Flower|Luckiest+Guy|Patrick+Hand|Patrick+Hand+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Luckiest+Guy|Patrick+Hand+SC" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -25,28 +25,38 @@
             <h2>See if you deserve CAKE.... or DEATH!!!</h2>
         
         <form id="user-input">
-            <section id="cake-input">
-                <img id="cake-icon" src="./assets/cake-icon-2.png">
-                <input 
-                    type="text"
-                    name="player-cake"
-                    id="player-cake"
-                    placeholder="Player 1"
-                >
+            <section id="player-inputs">
+                <section id="cake-input">
+                    <img id="cake-icon" src="./assets/cake-icon-2.png" alt="icon of cake">
+                    <input 
+                        type="text"
+                        name="player-cake"
+                        id="player-cake"
+                        placeholder="Player 1"
+                        minlength="1"
+                        maxlength="15"
+                    >
+                </section>
+                <section id="death-input">
+                    <img id="death-icon" src="./assets/death-icon.png" alt="icon of grimm reaper">
+                    <input 
+                        type="text"
+                        name="player-death"
+                        id="player-death"
+                        placeholder="Player 2"
+                        minlength="1"
+                        maxlength="15"
+                    >
+                </section>
+            </section>  
+            <section id="play-button">
+                <button>Play!</button>
             </section>
-            <section id="death-input">
-                <img id="death-icon" src="./assets/death-icon.png">
-                <input 
-                    type="text"
-                    name="player-death"
-                    id="player-death"
-                    placeholder="Player 2"
-                >
-            </section>
-            <button>Play!</button>
         </form>
     </main>
-    <footer></footer>
+    <footer>
+        <a href="about-us.html">About PopcornLeghorn</a>
+    </footer>
     <script type="module" src="src/index/index.js"></script>
 </body>
 </html>

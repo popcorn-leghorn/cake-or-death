@@ -1,7 +1,6 @@
 import buildGameboard from './calculations/build-gameboard.js';
 import updateGameboard from './calculations/update-gameboard.js';
 import win from './calculations/win.js';
-// dynamically creates table elements for game board
 
 const gameBodyNode = document.getElementById('game-body');
 const json = window.localStorage.getItem('userInfo');
@@ -24,7 +23,6 @@ for(let i = 0; i < 3; i++) {
         const td = document.createElement('td');
         td.id = 'cell-' + buildGameboard[i][j].value;
         td.classList.add('game-cell');
-        // can use above method to add additional attributes to buttons.
         const button = document.createElement('button');
         button.value = buildGameboard[i][j].value;
         button.id = 'button-' + buildGameboard[i][j].value;
@@ -48,19 +46,25 @@ for(let i = 0; i < 3; i++) {
             else if(player === 'C') {
                 turnDisplayNode.textContent = 'It\'s ' + userInfo.playerDeath + '\'s turn!';
             }
-            
+            const allButtons = document.getElementsByClassName('gameboard-buttons');
             updateGameboard(gameboard, button.value, player);
             
-
-            console.log(gameboard);
+            
             if(win(gameboard, player) === true) {
+                for(let index = 0; index < allButtons.length; index++) {
+                    allButtons[index].disabled = true;
+                }
                 if(player === 'C') {
                     userInfo.result = 'cake';
                 }
                 if(player === 'D') {
                     userInfo.result = 'death';
                 }
-                window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
+
+                setTimeout(function() {
+                    
+                    window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
+                }, 1000);
             }
             else if(win(gameboard, player) === false && turnCount === 8) {
                 userInfo.result = 'tie';
