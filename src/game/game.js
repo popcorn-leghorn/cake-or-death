@@ -56,22 +56,28 @@ for(let i = 0; i < 3; i++) {
             const allButtons = document.getElementsByClassName('gameboard-buttons');
             updateGameboard(gameboard, button.value, player);
             
-            
             if(win(gameboard, player) === true) {
                 for(let index = 0; index < allButtons.length; index++) {
                     allButtons[index].disabled = true;
                 }
                 if(player === 'C') {
                     userInfo.result = 'cake';
+                    const selectCake = document.getElementsByClassName('cake-cell');
+                    for(let i = 0; i < selectCake.length; i++) {
+                        selectCake[i].classList.add('animate-win');
+                    }
                 }
                 if(player === 'D') {
                     userInfo.result = 'death';
+                    const selectDeath = document.getElementsByClassName('death-cell');
+                    for(let i = 0; i < selectDeath.length; i++) {
+                        selectDeath[i].classList.add('animate-win');
+                    }
                 }
 
                 setTimeout(function() {
-                    
-                    window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
-                }, 1000);
+                   window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
+                }, 3500);
             }
             else if(win(gameboard, player) === false && turnCount === 8) {
                 userInfo.result = 'tie';

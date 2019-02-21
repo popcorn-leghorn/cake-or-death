@@ -128,3 +128,9 @@ button {
     background-size: cover;
     background-color: #C3073F;
 }
+
+.animate-win {
+    transform: rotate(1.0turn);
+    transition-duration: 3s;
+    background-color: oldlace;
+}
