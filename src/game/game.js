@@ -66,7 +66,7 @@ for(let i = 0; i < 3; i++) {
                     // const selectCake = document.getElementsByClassName('cake-cell');
                     const selectCake = returnWinningCells(gameboard, 'C');
                     for(let i = 0; i < selectCake.length; i++) {
-                        const winningCakeCell = document.getElementById('cell-' + selectCake);
+                        const winningCakeCell = document.getElementById('cell-' + selectCake[i]);
                         winningCakeCell.classList.add('animate-win');
                     }
                 }
