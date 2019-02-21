@@ -44,9 +44,9 @@ function returnWinningCells(gameboard, player) {
         return winningCellArray;
     }
     if(gameboard[0] === player && gameboard[4] === player && gameboard[8] === player) {
-        winningCellArray[0] = bla[0];
-        winningCellArray[1] = bla[4];
-        winningCellArray[2] = bla[8];
+        winningCellArray[0] = initArray[0];
+        winningCellArray[1] = initArray[4];
+        winningCellArray[2] = initArray[8];
         return winningCellArray;
     }
 }

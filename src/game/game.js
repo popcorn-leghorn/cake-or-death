@@ -9,8 +9,15 @@ const userInfo = JSON.parse(json);
 const cakeNameNode = document.getElementById('cake-name');
 const deathNameNode = document.getElementById('death-name');
 const turnDisplayNode = document.getElementById('turn-display');
+const cakeWinNode = document.getElementById('cake-wins');
+const deathWinNode = document.getElementById('death-wins');
+
 cakeNameNode.textContent = userInfo.playerCake;
 deathNameNode.textContent = userInfo.playerDeath;
+deathWinNode.textContent = userInfo.playerDeathWins;
+cakeWinNode.textContent = userInfo.playerCakeWins;
+
+
 
 let gameboard = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 let turnCount = 0;
@@ -54,6 +61,7 @@ for(let i = 0; i < 3; i++) {
             else if(player === 'C') {
                 turnDisplayNode.textContent = 'It\'s ' + userInfo.playerDeath + '\'s turn!';
             }
+
             const allButtons = document.getElementsByClassName('gameboard-buttons');
             updateGameboard(gameboard, button.value, player);
             
@@ -63,7 +71,7 @@ for(let i = 0; i < 3; i++) {
                 }
                 if(player === 'C') {
                     userInfo.result = 'cake';
-                    // const selectCake = document.getElementsByClassName('cake-cell');
+                    userInfo.playerCakeWins++;
                     const selectCake = returnWinningCells(gameboard, 'C');
                     for(let i = 0; i < selectCake.length; i++) {
                         const winningCakeCell = document.getElementById('cell-' + selectCake[i]);
@@ -72,11 +80,16 @@ for(let i = 0; i < 3; i++) {
                 }
                 if(player === 'D') {
                     userInfo.result = 'death';
-                    const selectDeath = document.getElementsByClassName('death-cell');
+                    userInfo.playerDeathWins++;
+                    const selectDeath = returnWinningCells(gameboard, 'D');
                     for(let i = 0; i < selectDeath.length; i++) {
-                        selectDeath[i].classList.add('animate-win');
+                        const winningDeathCell = document.getElementById('cell-' + selectDeath[i]);
+                        winningDeathCell.classList.add('animate-win');
                     }
                 }
+
+                const logWin = JSON.stringify(userInfo);
+                window.localStorage.setItem('userInfo', logWin);
 
                 setTimeout(function() {
                     window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
