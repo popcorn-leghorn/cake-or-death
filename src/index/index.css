@@ -1,6 +1,14 @@
-html {
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: oldlace;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 20px;
     background-color: #4E4E50;
 }
+
 header {
     display: flex;
     text-shadow: 1px 1px 2px black;
@@ -10,30 +18,6 @@ header {
     width: 800px; 
 }
 
-h1 {
-    font-family: 'Luckiest Guy', cursive;
-    color: hotpink;
-    font-size: 80px;
-    text-shadow: 2px 12px 2px black;
-    margin: 0px;   
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: oldlace;
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 20px;
-}
-h2 {
-    color: hotpink;
-    text-shadow: 1px 1px 2px black;
-    font-family: 'Gloria Hallelujah', cursive;
-    height: 50px;
-    margin: 15px;
-}
 main {
     display: flex;
     flex-direction: column;
@@ -44,9 +28,7 @@ main {
     border-radius: 5px;
     
 }
-#index-main {
-    width: 700px;
-}
+
 footer {
     border: 3px solid black;
     padding: 10px;
@@ -56,6 +38,28 @@ footer {
     width: 45%;
     display: flex;
     justify-content: space-around;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: hotpink;
+    font-size: 80px;
+    text-shadow: 2px 12px 2px black;
+    margin: 0px;   
+}
+
+h2 {
+    color: hotpink;
+    text-shadow: 1px 1px 2px black;
+    font-family: 'Gloria Hallelujah', cursive;
+    height: 50px;
+    margin: 15px;
 }
 
 a {
@@ -73,23 +77,21 @@ input {
     border: 3px solid black;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#player-inputs {
-    display: flex;
-    flex-direction: row;
-}
-
 button {
     background-color: black;
     color: oldlace;
     padding: 10px;
     border-radius: 5px;
     width: 100px;
+}
+
+#index-main {
+    width: 700px;
+}
+
+#player-inputs {
+    display: flex;
+    flex-direction: row;
 }
 
 #cake-icon, #death-icon {
@@ -109,6 +111,8 @@ button {
     border-radius: 5px;
 }
 
+/* Results page */
+
 #cake-wins, #death-wins, #tie {
     width: 300px;
     border-radius: 5px;
@@ -121,6 +125,8 @@ button {
     align-items: center;
     margin-bottom: 10px;
 }
+
+/* About Us page */
 
 .profile-pic {
     width: 100px;

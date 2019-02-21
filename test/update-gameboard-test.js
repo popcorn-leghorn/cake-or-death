@@ -27,7 +27,7 @@ test('if user cakes second input is two, update gameboard[2] to "C"', function(a
     const expected = ['C', 'D', 'C', 3, 4, 5, 6, 7, 8];
     assert.deepEqual(results, expected);
 });
-// Test below is the same result as above, different method
+
 test('if user cakes second input is two, update gameboard[2] to "C"', function(assert) {
     const init = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     let player = 'C';
