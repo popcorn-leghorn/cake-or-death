@@ -26,7 +26,6 @@ function playSound() {
     const bodySound = document.getElementById('click-sound');
     bodySound.play();
 }
-// adding a comment
 
 for(let i = 0; i < 3; i++) {
     const tr = document.createElement('tr');
