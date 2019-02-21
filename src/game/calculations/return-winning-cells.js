@@ -1,6 +1,7 @@
 function returnWinningCells(gameboard, player) {
     let winningCellArray = [];
     let initArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    
     if(gameboard[0] === player && gameboard[1] === player && gameboard[2] === player) {
         winningCellArray[0] = initArray[0];
         winningCellArray[1] = initArray[1];

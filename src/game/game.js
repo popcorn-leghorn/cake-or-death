@@ -1,7 +1,7 @@
 import buildGameboard from './calculations/build-gameboard.js';
 import updateGameboard from './calculations/update-gameboard.js';
 import win from './calculations/win.js';
-import returnWinningCells from './calculations/return-winning-cells.js';
+import onGameWin from './calculations/on-game-win.js';
 
 const gameBodyNode = document.getElementById('game-body');
 const json = window.localStorage.getItem('userInfo');
@@ -26,23 +26,28 @@ function playSound() {
     const bodySound = document.getElementById('click-sound');
     bodySound.play();
 }
-
+//creates table rows
 for(let i = 0; i < 3; i++) {
     const tr = document.createElement('tr');
     gameBodyNode.appendChild(tr);
+    //creating table data
     for(let j = 0; j < 3; j++) {
         const td = document.createElement('td');
-        td.id = 'cell-' + buildGameboard[i][j].value;
+        td.id = 'cell-' + buildGameboard[i][j];
         td.classList.add('game-cell');
+
         const button = document.createElement('button');
-        button.value = buildGameboard[i][j].value;
-        button.id = 'button-' + buildGameboard[i][j].value;
+        button.value = buildGameboard[i][j];
+        button.id = 'button-' + buildGameboard[i][j];
         button.classList.add('gameboard-buttons');
 
         button.addEventListener('click', function() {
+            //play a sound
             playSound();
+            //selects element that is clicked by button and hides it
             const selectedButton = document.getElementById('button-' + button.value);
             selectedButton.style.visibility = 'hidden';
+            //selects element that is clicked and styles it cake or death by adding class
             const selectedCell = document.getElementById('cell-' + button.value);
             if(turnCount % 2 === 0) {
                 player = 'C';
@@ -52,47 +57,23 @@ for(let i = 0; i < 3; i++) {
                 player = 'D';
                 selectedCell.classList.add('death-cell');
             }
-
+            //updates turn counter display
             if(player === 'D') {
                 turnDisplayNode.textContent = 'It\'s ' + userInfo.playerCake + '\'s turn!';
             }
             else if(player === 'C') {
                 turnDisplayNode.textContent = 'It\'s ' + userInfo.playerDeath + '\'s turn!';
             }
-
-            const allButtons = document.getElementsByClassName('gameboard-buttons');
+            //selects all buttons
+            
+            //updates our gameboard based on which player clicks on a button
             updateGameboard(gameboard, button.value, player);
             
+            //checks to see if game has been won
             if(win(gameboard, player) === true) {
-                for(let index = 0; index < allButtons.length; index++) {
-                    allButtons[index].disabled = true;
-                }
-                if(player === 'C') {
-                    userInfo.result = 'cake';
-                    userInfo.playerCakeWins++;
-                    const selectCake = returnWinningCells(gameboard, 'C');
-                    for(let i = 0; i < selectCake.length; i++) {
-                        const winningCakeCell = document.getElementById('cell-' + selectCake[i]);
-                        winningCakeCell.classList.add('animate-win');
-                    }
-                }
-                if(player === 'D') {
-                    userInfo.result = 'death';
-                    userInfo.playerDeathWins++;
-                    const selectDeath = returnWinningCells(gameboard, 'D');
-                    for(let i = 0; i < selectDeath.length; i++) {
-                        const winningDeathCell = document.getElementById('cell-' + selectDeath[i]);
-                        winningDeathCell.classList.add('animate-win');
-                    }
-                }
-
-                const logWin = JSON.stringify(userInfo);
-                window.localStorage.setItem('userInfo', logWin);
-
-                setTimeout(function() {
-                    window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
-                }, 3500);
+                onGameWin(gameboard, player, userInfo);
             }
+            // tie page and increases the turn count
             else if(win(gameboard, player) === false && turnCount === 8) {
                 userInfo.result = 'tie';
                 window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
@@ -100,8 +81,9 @@ for(let i = 0; i < 3; i++) {
             else {
                 turnCount++;
             }
-
+            // event listenner ends
         });
+        // appends cell data and button
         tr.appendChild(td);
         td.appendChild(button);
     }
