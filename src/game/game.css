@@ -23,7 +23,8 @@ h1 {
     width: 455px;
     height: 40px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     margin: 5px;
     border-radius: 5px;
 }
@@ -31,13 +32,34 @@ h1 {
 #cake-player, #death-player {
     display: flex; 
     justify-content: space-evenly;
+    position: relative;
     font-family: 'Gloria Hallelujah', cursive;
     color: oldlace;
     font-size: 23px;
     align-items: center;
     width: 300px; 
     border-radius: 5px;
+    height: 75px;
 }
+
+
+.win-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30px;
+    justify-content: space-around;
+    color: oldlace;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.win-count-display {
+    margin: -5px;
+    margin-left: -10px;
+    font-size: 14px;
+}
+
+
 
 #turn-count {
     color: oldlace;
