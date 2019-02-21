@@ -1,6 +1,7 @@
 import buildGameboard from './calculations/build-gameboard.js';
 import updateGameboard from './calculations/update-gameboard.js';
 import win from './calculations/win.js';
+import returnWinningCells from './calculations/return-winning-cells.js';
 
 const gameBodyNode = document.getElementById('game-body');
 const json = window.localStorage.getItem('userInfo');
@@ -62,9 +63,11 @@ for(let i = 0; i < 3; i++) {
                 }
                 if(player === 'C') {
                     userInfo.result = 'cake';
-                    const selectCake = document.getElementsByClassName('cake-cell');
+                    // const selectCake = document.getElementsByClassName('cake-cell');
+                    const selectCake = returnWinningCells(gameboard, 'C');
                     for(let i = 0; i < selectCake.length; i++) {
-                        selectCake[i].classList.add('animate-win');
+                        const winningCakeCell = document.getElementById('cell-' + selectCake);
+                        winningCakeCell.classList.add('animate-win');
                     }
                 }
                 if(player === 'D') {
@@ -76,7 +79,7 @@ for(let i = 0; i < 3; i++) {
                 }
 
                 setTimeout(function() {
-                   window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
+                    window.location = 'result.html?result=' + encodeURIComponent(userInfo.result);
                 }, 3500);
             }
             else if(win(gameboard, player) === false && turnCount === 8) {

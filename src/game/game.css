@@ -124,7 +124,7 @@ button {
 }
 
 .death-cell {
-    background-image: url('../../assets/death-icon.png');
+    background-image: url('../../assets/dead.png');
     background-size: cover;
     background-color: #C3073F;
 }
