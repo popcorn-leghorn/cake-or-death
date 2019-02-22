@@ -6,15 +6,6 @@ const resultToFind = searchParams.get('result');
 const json = window.localStorage.getItem('userInfo');
 const userInfo = JSON.parse(json);
 
-function playCake() {
-    const cakeSound = document.getElementById('cake-sound');
-    cakeSound.play();
-}
-
-function playDeath() {
-    const deathSound = document.getElementById('death-sound');
-    deathSound.play();
-}
 
 function playTie() {
     const tieSound = document.getElementById('tie-sound');
@@ -23,7 +14,6 @@ function playTie() {
 
 switch(resultToFind) {
     case 'cake':
-        playCake();
         endMessageNode.textContent = userInfo.playerCake;
         endMessageNode.innerHTML += ' wins!<br> Let them eat CAKE!';
         endImageNode.src = '../../assets/cake-1.png';
@@ -32,7 +22,6 @@ switch(resultToFind) {
         break;
 
     case 'death':
-        playDeath();
         endMessageNode.textContent = userInfo.playerDeath;
         endMessageNode.innerHTML += ' wins! 1000 years of DEATH falls upon the land...';
         endImageNode.src = '../../assets/grim-victory.png';

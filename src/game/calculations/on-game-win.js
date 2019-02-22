@@ -1,4 +1,8 @@
 import returnWinningCells from './return-winning-cells.js';
+function playSparkle() {
+    const winSound = document.getElementById('win-sound');
+    winSound.play();
+}
 
 function onGameWin(gameboard, player, userInfo) {
     const allButtons = document.getElementsByClassName('gameboard-buttons');
@@ -6,6 +10,8 @@ function onGameWin(gameboard, player, userInfo) {
     for(let index = 0; index < allButtons.length; index++) {
         allButtons[index].disabled = true;
     }
+
+    playSparkle();
 
     if(player === 'C') {
         userInfo.result = 'cake';

@@ -22,10 +22,11 @@ let turnCount = 0;
 let player = 'C';
 turnDisplayNode.textContent = 'It\'s ' + userInfo.playerCake + '\'s turn!';
 
-function playSound() {
-    const bodySound = document.getElementById('click-sound');
-    bodySound.play();
+function playBubble() {
+    const clickSound = document.getElementById('click-sound');
+    clickSound.play();
 }
+
 
 for(let i = 0; i < 3; i++) {
     const tr = document.createElement('tr');
@@ -42,7 +43,7 @@ for(let i = 0; i < 3; i++) {
         button.classList.add('gameboard-buttons');
 
         button.addEventListener('click', function() {
-            playSound();
+            playBubble();
             
             const selectedButton = document.getElementById('button-' + button.value);
             selectedButton.style.visibility = 'hidden';
