@@ -14,6 +14,11 @@ const deathWinNode = document.getElementById('death-wins');
 const searchParams = new URLSearchParams(window.location.search);
 const dreamyKnuth = searchParams.get('mod');
 
+if(dreamyKnuth) {
+    userInfo.playerCake = 'Dreamy';
+    userInfo.playerDeath = 'Knuth';
+}
+
 cakeNameNode.textContent = userInfo.playerCake;
 deathNameNode.textContent = userInfo.playerDeath;
 deathWinNode.textContent = userInfo.playerDeathWins;
@@ -29,7 +34,6 @@ function playBubble() {
     clickSound.play();
 }
 
-
 for(let i = 0; i < 3; i++) {
     const tr = document.createElement('tr');
     gameBodyNode.appendChild(tr);
@@ -42,6 +46,7 @@ for(let i = 0; i < 3; i++) {
         const button = document.createElement('button');
         button.value = buildGameboard[i][j];
         button.id = 'button-' + buildGameboard[i][j];
+
         if(dreamyKnuth) {
             button.classList.add('dreamy-knuth');
         }
