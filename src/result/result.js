@@ -6,6 +6,9 @@ const resultToFind = searchParams.get('result');
 const json = window.localStorage.getItem('userInfo');
 const userInfo = JSON.parse(json);
 
+if(!resultToFind) {
+    window.location = '/';
+}
 
 function playTie() {
     const tieSound = document.getElementById('tie-sound');
@@ -16,7 +19,7 @@ switch(resultToFind) {
     case 'cake':
         endMessageNode.textContent = userInfo.playerCake;
         endMessageNode.innerHTML += ' wins!<br> Let them eat CAKE!';
-        endImageNode.src = './assets/cake-1.png';
+        endImageNode.src = '../../assets/cake-1.png';
         endImageNode.id = 'cake-wins';
         endImageNode.alt = 'a wedding cake';
         break;
@@ -24,7 +27,7 @@ switch(resultToFind) {
     case 'death':
         endMessageNode.textContent = userInfo.playerDeath;
         endMessageNode.innerHTML += ' wins! 1000 years of DEATH falls upon the land...';
-        endImageNode.src = './assets/grim-victory.png';
+        endImageNode.src = '../../assets/grim-victory.png';
         endImageNode.id = 'death-wins';
         endImageNode.alt = 'the grim reaper';
         break;
