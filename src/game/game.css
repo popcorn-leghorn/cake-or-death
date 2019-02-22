@@ -125,7 +125,6 @@ button {
     margin-bottom: 5px;
 }
 
-
 #game-table {
     border: 3px solid black;
     width: 455px;
@@ -148,8 +147,6 @@ button {
     height: 130px;
     text-align: center;
 }
-
-
 
 .animate-win {
     transform: rotate(1.0turn);
