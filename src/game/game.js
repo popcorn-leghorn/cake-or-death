@@ -11,6 +11,8 @@ const deathNameNode = document.getElementById('death-name');
 const turnDisplayNode = document.getElementById('turn-display');
 const cakeWinNode = document.getElementById('cake-wins');
 const deathWinNode = document.getElementById('death-wins');
+const searchParams = new URLSearchParams(window.location.search);
+const dreamyKnuth = searchParams.get('mod');
 
 cakeNameNode.textContent = userInfo.playerCake;
 deathNameNode.textContent = userInfo.playerDeath;
@@ -40,7 +42,12 @@ for(let i = 0; i < 3; i++) {
         const button = document.createElement('button');
         button.value = buildGameboard[i][j];
         button.id = 'button-' + buildGameboard[i][j];
-        button.classList.add('gameboard-buttons');
+        if(dreamyKnuth) {
+            button.classList.add('dreamy-knuth');
+        }
+        else {
+            button.classList.add('gameboard-buttons');
+        }
 
         button.addEventListener('click', function() {
             playBubble();

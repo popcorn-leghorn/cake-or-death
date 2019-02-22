@@ -66,6 +66,10 @@ button {
     background-image: url('../../assets/cake-or-death.png');
     background-size: cover;
 }
+.dreamy-knuth {
+    background-image: url('../../assets/dreamy-knuth.gif');
+    background-size: cover;
+}
 
 .cake-cell {
     background-image: url('../../assets/cake-icon-2.png');
