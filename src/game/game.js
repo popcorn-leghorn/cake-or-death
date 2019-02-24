@@ -26,6 +26,7 @@ cakeWinNode.textContent = userInfo.playerCakeWins;
 
 let gameboard = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 let turnCount = 0;
+
 let player = 'C';
 turnDisplayNode.textContent = 'It\'s ' + userInfo.playerCake + '\'s turn!';
 
@@ -61,7 +62,9 @@ for(let i = 0; i < 3; i++) {
             selectedButton.style.visibility = 'hidden';
             
             const selectedCell = document.getElementById('cell-' + button.value);
-
+            // some more duplication here up till 80. How might you remove it?
+            // Also since 'C' and 'D' are reused domain concepts I would encourage
+            // naming them as a const. forex: const cakePlayer = 'C';
             if(turnCount % 2 === 0) {
                 player = 'C';
                 selectedCell.classList.add('cake-cell');
