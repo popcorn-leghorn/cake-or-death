@@ -1,3 +1,8 @@
+// More opportunities for removing duplication; note the
+// if conditions in this function are the same as that in win.js
+// the conditions themselves could be kept as domain concepts in 
+// a separate file and exported
+
 function returnWinningCells(gameboard, player) {
     let winningCellArray = [];
     let initArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
